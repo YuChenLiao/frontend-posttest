@@ -22,15 +22,6 @@ const MainPage = () => {
     for ( let k = 0;k < waterfallDeviationHeight.length; k += 1) {
       setDeviation(waterfallDeviationHeight[k] = 0)
     }
-    let picRes = {
-      id: '',
-      url: '',
-      width: 0,
-      height: 0,
-      top: 0,
-      left: 0,
-    };
-    let imgurl = new Array(picRes);
     try {
       axios.defaults.headers.common['x-api-key'] = '40a43cad-bb75-475b-bf26-c6a60506a908'; // Replace this with your API Key
       const res = await axios.get(
@@ -57,11 +48,8 @@ const MainPage = () => {
         pic.left = minIndex*(waterfallImgRight + 170);
         waterfallDeviationHeight[minIndex] += pic.height + waterfallImgBottom;
         console.log('珍爱生命，远离eslint');
-        imgurl.push(pic);
+        setimgsrc([...imgsrc,pic])
       }
-      setimgsrc({
-        imgsrc: imgurl
-      });
       console.log(imgsrc)
       // console.log('url:', this.imgsrc[i].url);
       // console.log(this.imgsrc[i].left);
@@ -75,7 +63,16 @@ const MainPage = () => {
   };
 
   return (
-    <div className="mainContent">{imgsrc[0]}</div>
+    <div className="mainContent">
+      {
+        imgsrc.map((item,index)=>{
+          console.log(item)
+          return (
+            <div>内容{item.url}</div>
+          )
+        })
+      }
+    </div>
   );
 }
 
