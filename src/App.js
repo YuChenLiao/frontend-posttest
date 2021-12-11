@@ -1,9 +1,12 @@
 import './App.css';
+import HeaderTab from './components/header';
+import MainPage from './components/mainPage';
 
 function App() {
   return (
     <div className="App">
-      前端大作业
+      <HeaderTab></HeaderTab>
+      <MainPage></MainPage>
     </div>
   );
 }
