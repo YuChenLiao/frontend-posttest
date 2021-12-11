@@ -1,8 +1,9 @@
 import React, {} from "react";
+import './mainPage.css'
 
 const MainPage = () => {
   return (
-    <div>主要页面</div>
+    <div className="mainContent">主要页面</div>
   );
 }
 
