@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react"
 import axios from "axios"
+import { Modal } from "antd"
+import 'antd/dist/antd.css'
 import './mainPage.css'
 
 const MainPage = () => {
@@ -36,6 +38,8 @@ const MainPage = () => {
           url: '',
           width: 0,
           height: 0,
+          realWidth: 0,
+          realHeight: 0,
           top: 0,
           left: 0,
         }
@@ -46,6 +50,8 @@ const MainPage = () => {
           url: temp[i].url,
           width: temp[i].width,
           height: temp[i].height,
+          realWidth: temp[i].width,
+          realHeight: temp[i].height,
           top: 0,
           left: 0,
         };
@@ -66,6 +72,31 @@ const MainPage = () => {
     }
   };
 
+  const clickItem = (item,index) => {
+    Modal.info({
+      title: '图片详情',
+      closable: true,
+      centered: true,
+      maskClosable: true,
+      content: (
+        <div className="mask">
+          <img src={item.url} alt={index}></img>
+          <p>
+            原图尺寸：
+            宽{item.realWidth}px,
+            高{item.realHeight}px
+          </p>
+          <div>
+            图片链接：
+            <a href={item.url} target="_blank">
+              {item.url}
+            </a>
+          </div>
+        </div>
+      )
+    })
+  }
+
   // 瀑布流组件
   const Waterfall = (...src) => {
     const temp = src[0].src
@@ -83,6 +114,7 @@ const MainPage = () => {
               top: item.top+'px',
               left: item.left+'px'
             }}
+            onClick={()=>clickItem(item,index)}
           >
             <img src={item.url} alt={index} className='imgItem'></img>
           </div>
