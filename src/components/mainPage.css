@@ -20,6 +20,7 @@
   position: absolute;
   box-sizing: border-box;
   border-radius: .1rem;
+  box-shadow: gray 0 0 2px;
 }
 
 .wImg:hover {
@@ -41,4 +42,16 @@
   vertical-align: top;
   width: 100%;
   height: 100%;
+}
+
+.footer {
+  border-top: gray 1px solid;
+  border-bottom: gray 1px solid;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: .3rem;
+  color: gray;
+}
+.footer:hover {
+  box-shadow: gray 0 0 8px;
 }
