@@ -13,5 +13,9 @@
   line-height: .4rem;
   margin-top: .1rem;
   border-radius: .2rem;
-  box-shadow: gray 0 0 3px;
+  box-shadow: gray 0 0 5px;
+}
+
+.mStart div:hover {
+  box-shadow: black 0 0 5px;
 }
