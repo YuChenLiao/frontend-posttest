@@ -1,30 +1,15 @@
 import React from "react"
-import { Affix, Dropdown, Button, Menu } from "antd"
-import 'antd/dist/antd.css'
 import './rightAffix.css'
 
 const RightAffix = () => {
 
-  const menu = (
-      <Menu>
-        
-      </Menu>
-  )
-
   return (
-    <Affix 
-      style={{
-        position: 'absolute',
-        top: '65%',
-        left: '94%'
-      }}>
-      <Dropdown 
-        overlay={menu}
-        placement="topCenter"
-      >
-        <div className="mStart">123</div>
-      </Dropdown>
-    </Affix>
+    <div className="mStart">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
   )
 }
 
