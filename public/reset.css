@@ -75,6 +75,10 @@ html, body, div, span, applet, object, iframe,
  html{
    overflow-y: scroll;
  }
+
+ html, body {
+  scroll-behavior: smooth;
+}
   
  /*清除浮动*/
  .clearfix:before,
