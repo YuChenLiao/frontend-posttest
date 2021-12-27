@@ -1,3 +1,23 @@
+# web 前端技术大作业
+
+## 技术栈
+
+- react
+
+- antd
+
+- axios
+
+- [The Cat API](https://thecatapi.com/)
+
+## 测试链接
+
+<http://101.37.80.152/>
+
+## 布局方式
+
+瀑布流布局，具体实现为先为每张图片设定相对固定（百分比）的宽度，并设置好列数，通过接口返回的图片宽高进行计算图片的显示宽高，之后遍历储存列数高度的数组，将图片位置设置为对应列的对应高度，计算完之后更新对应列数的高度，然后循环，直到所有图片被遍历完毕
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
