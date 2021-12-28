@@ -41,19 +41,11 @@ yarn start
 
 对应功能文件要放在对应目录下，主要工作区为 src 目录；
 
-页面级组件及对应样式表放在src/routes 目录下；
-
 子组件及对应样式表放在 src/components 下；
 
 引入的图片，音乐，视频等静态资源放在 src/assets 目录下；
 
-使用 dva 编写的状态管理文件放在 src/models 目录下；
-
-页面级组件路由统一挂载到 router.js 上，路由统一使用小写，写法自行参考文件内容；
-
 http 请求一律使用 [axios](https://www.axios-http.cn/) 进行发送,使用方法自行参考文档；
-
-antd 尽量不要用于前台页面（给用户展示的页面），尽量在商家专属页面和管理员页面使用；
 
 不要随意改动其他目录下的文件；
 
@@ -83,4 +75,4 @@ antd 尽量不要用于前台页面（给用户展示的页面），尽量在商
 
 在确认功能本地运行确保无误后，请提交 pr 申请合并分支到 master 上；
 
-[git 教程](https://www.liaoxuefeng.com/wiki/896043488029600);
+[git 教程](https://www.liaoxuefeng.com/wiki/896043488029600)；
