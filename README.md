@@ -35,6 +35,9 @@ yarn start
 //非第一次运行
 yarn start
 
+//打包命令
+yarn build
+
 ~~~
 
 ## 开发规范
