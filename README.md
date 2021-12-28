@@ -1,12 +1,6 @@
 # web 前端技术大作业
 
-## 技术栈
-
-- react
-
-- antd
-
-- axios
+## 接口支持
 
 - [The Cat API](https://thecatapi.com/)
 
@@ -18,73 +12,75 @@
 
 瀑布流布局，具体实现为先为每张图片设定相对固定（百分比）的宽度，并设置好列数，通过接口返回的图片宽高进行计算图片的显示宽高，之后遍历储存列数高度的数组，将图片位置设置为对应列的对应高度，计算完之后更新对应列数的高度，然后循环，直到所有图片被遍历完毕
 
-# Getting Started with Create React App
+## 技术栈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[react](https://react.docschina.org/tutorial/tutorial.html)  + [antd](https://ant.design/docs/react/getting-started-cn)
 
-## Available Scripts
+推荐使用 vscode 或者 webstorm 进行开发 ，缩进一律采用两格缩进，如下
 
-In the project directory, you can run:
+~~~html
+<div>
+  <p></p>
+</div>
+~~~
 
-### `yarn start`
+项目本地启动方式如下
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+~~~cmd
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+//第一次运行
+yarn
+yarn start
 
-### `yarn test`
+//非第一次运行
+yarn start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+~~~
 
-### `yarn build`
+## 开发规范
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+对应功能文件要放在对应目录下，主要工作区为 src 目录；
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+页面级组件及对应样式表放在src/routes 目录下；
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+子组件及对应样式表放在 src/components 下；
 
-### `yarn eject`
+引入的图片，音乐，视频等静态资源放在 src/assets 目录下；
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+使用 dva 编写的状态管理文件放在 src/models 目录下；
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+页面级组件路由统一挂载到 router.js 上，路由统一使用小写，写法自行参考文件内容；
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+http 请求一律使用 [axios](https://www.axios-http.cn/) 进行发送,使用方法自行参考文档；
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+antd 尽量不要用于前台页面（给用户展示的页面），尽量在商家专属页面和管理员页面使用；
 
-## Learn More
+不要随意改动其他目录下的文件；
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+不要随意添加新的依赖；
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+开发环境统一为 [Node.js](http://nodejs.cn/)，请自行安装并配置环境；
 
-### Code Splitting
+包管理统一使用 yarn 进行，请自行参考文档或教程进行配置；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 命名规范
 
-### Analyzing the Bundle Size
+文件，变量与函数一律采用驼峰命名法，如 one person 命名为onePerson；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+组件名称一律采用双驼峰命名，如 search tab 命名为 SearchTab；
 
-### Making a Progressive Web App
+不同的函数之间请隔开一个空行；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+样式表文件（css）中，不同的样式之间也要隔一个空行；
 
-### Advanced Configuration
+## 协作与提交规范
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+统一使用 git 进行协作，请安装好 git 并注册 github 账号；
 
-### Deployment
+禁止直接提交到 master 分支，提交前请在本地新建分支并 push 到对应分支上；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+每次提交的 commit 依照简洁明了的原则，请不要随意编写 commit 信息；
 
-### `yarn build` fails to minify
+在确认功能本地运行确保无误后，请提交 pr 申请合并分支到 master 上；
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[git 教程](https://www.liaoxuefeng.com/wiki/896043488029600);
